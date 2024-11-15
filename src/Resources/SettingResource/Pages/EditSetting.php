@@ -10,6 +10,8 @@ class EditSetting extends EditRecord
 {
     protected static string $resource = SettingResource::class;
 
+    public static ?string $title = 'Modification des paramètres';
+
     protected function getHeaderActions(): array
     {
         return [

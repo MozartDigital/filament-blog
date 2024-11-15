@@ -16,7 +16,7 @@ class SettingResource extends Resource
 
     protected static ?string $navigationGroup = 'Content Management';
 
-    protected static ?string $modelLabel = 'Paramètres du site';
+    protected static ?string $modelLabel = 'Paramètre';
 
     protected static ?string $navigationLabel = 'Paramètres du site';
 

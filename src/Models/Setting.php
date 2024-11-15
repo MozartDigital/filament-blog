@@ -57,9 +57,11 @@ class Setting extends Model
             Section::make('General Information')
                 ->schema([
                     TextInput::make('title')
+                        ->label('Titre du site')
                         ->maxLength(155)
                         ->required(),
                     TextInput::make('organization_name')
+                        ->label('Nom de l\'organisation')
                         ->required()
                         ->maxLength(155)
                         ->minLength(3),
@@ -72,6 +74,8 @@ class Setting extends Model
                         ->hint('Max height 400')
                         ->directory('setting/logo')
                         ->maxSize(1024 * 1024 * 2)
+                        ->imageEditor()
+                        ->hint('La taille de l\image recommandé est de 400x400')
                         ->rules('dimensions:max_height=400')
                         ->nullable()->columnSpanFull(),
                     FileUpload::make('favicon')
@@ -81,7 +85,7 @@ class Setting extends Model
                 ])->columns(2),
 
             Section::make('SEO')
-                ->description('Place your google analytic and adsense code here. This will be added to the head tag of your blog post only.')
+                ->description('Ajouter les codes de Google Console, Google Analytic et Google Adsense ici.')
                 ->schema([
                     Textarea::make('google_console_code')
                         ->startsWith('<meta')
@@ -99,7 +103,7 @@ class Setting extends Model
                         ->columnSpanFull(),
                 ])->columns(2),
             Section::make('Quick Links')
-                ->description('Add your quick links here. This will be displayed in the footer of your blog.')
+                ->description('Ajouter des liens rapides ici.')
                 ->schema([
                     Repeater::make('quick_links')
                         ->label('Links')
@@ -109,7 +113,7 @@ class Setting extends Model
                                 ->maxLength(155),
                             TextInput::make('url')
                                 ->label('URL')
-                                ->helperText('URL should start with http:// or https://')
+                                ->helperText('URL doit commencer par http:// or https://')
                                 ->required()
                                 ->url()
                                 ->maxLength(255),
