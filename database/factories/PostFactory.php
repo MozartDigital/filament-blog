@@ -5,7 +5,6 @@ namespace Firefly\FilamentBlog\Database\Factories;
 use Carbon\Carbon;
 use Firefly\FilamentBlog\Enums\PostStatus;
 use Firefly\FilamentBlog\Models\Post;
-use Firefly\FilamentBlog\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -33,7 +32,7 @@ class PostFactory extends Factory
             'scheduled_for' => $this->faker->dateTime(),
             'cover_photo_path' => $this->faker->imageUrl(),
             'photo_alt_text' => $this->faker->word,
-            'user_id' => User::factory(),
+            'user_id' => (config('filamentblog.user.model'))::factory(),
         ];
     }
 
