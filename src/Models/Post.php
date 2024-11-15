@@ -45,6 +45,8 @@ class Post extends Model
         'scheduled_for',
     ];
 
+    protected $with = ['user'];
+
     /**
      * The attributes that should be cast to native types.
      *

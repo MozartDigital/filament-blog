@@ -113,6 +113,12 @@ class PostResource extends Resource
                     ->label('Statut')
                     ->multiple()
                     ->options(PostStatus::class),
+                SelectFilter::make('user_id')
+                    ->label('Auteur')
+                    ->options(fn () => (config('filamentblog.user.model'))::whereHas('posts')->pluck('name', 'id'))
+                    ->searchable()
+                    ->preload()
+                    ->multiple(),
                 DateRangeFilter::make('created_at')
                     ->label('Créé le'),
                 DateRangeFilter::make('expire_at')

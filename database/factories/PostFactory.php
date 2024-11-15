@@ -27,7 +27,7 @@ class PostFactory extends Factory
             'slug' => Str::slug($title),
             'sub_title' => $this->faker->word(),
             'body' => $this->faker->text(),
-            'status' => PostStatus::PENDING,
+            'status' => fake()->randomElement(PostStatus::class),
             'published_at' => $this->faker->dateTime(),
             'scheduled_for' => $this->faker->dateTime(),
             'cover_photo_path' => $this->faker->imageUrl(),
