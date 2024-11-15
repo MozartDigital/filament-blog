@@ -14,7 +14,13 @@ class SeoDetailResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-magnifying-glass';
 
-    protected static ?string $navigationGroup = 'Blog';
+    protected static ?string $activeNavigationIcon = 'heroicon-s-document-magnifying-glass';
+
+    protected static ?string $navigationGroup = 'Content Management';
+
+    protected static ?string $modelLabel = 'SEO';
+
+    protected static ?string $navigationLabel = 'SEO';
 
     protected static ?int $navigationSort = 4;
 
@@ -30,18 +36,24 @@ class SeoDetailResource extends Resource
             ->striped()
             ->columns([
                 Tables\Columns\TextColumn::make('post.title')
+                    ->label('Article')
                     ->limit(20),
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Titre')
                     ->limit(20)
                     ->searchable(),
-                Tables\Columns\TextColumn::make('keywords')->badge()
+                Tables\Columns\TextColumn::make('keywords')
+                    ->label('Mots-clés')
+                    ->badge()
                     ->searchable(),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Créé le')
+                    ->dateTime('D d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Modifié le')
+                    ->dateTime('D d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
@@ -50,7 +62,7 @@ class SeoDetailResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->slideOver(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -71,7 +83,7 @@ class SeoDetailResource extends Resource
         return [
             'index' => \Firefly\FilamentBlog\Resources\SeoDetailResource\Pages\ListSeoDetails::route('/'),
             'create' => \Firefly\FilamentBlog\Resources\SeoDetailResource\Pages\CreateSeoDetail::route('/create'),
-            'edit' => \Firefly\FilamentBlog\Resources\SeoDetailResource\Pages\EditSeoDetail::route('/{record}/edit'),
+            // 'edit' => \Firefly\FilamentBlog\Resources\SeoDetailResource\Pages\EditSeoDetail::route('/{record}/edit'),
         ];
     }
 }

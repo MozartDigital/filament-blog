@@ -18,7 +18,15 @@ class CategoryResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-squares-plus';
 
-    protected static ?string $navigationGroup = 'Blog';
+    protected static ?string $activeNavigationIcon = 'heroicon-s-squares-plus';
+
+    protected static ?string $navigationGroup = 'Content Management';
+
+     protected static ?string $modelLabel = 'Catégories';
+
+    protected static ?string $navigationLabel = 'Catégories';
+
+
 
     protected static ?int $navigationSort = 1;
 
@@ -33,17 +41,21 @@ class CategoryResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nom')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug'),
                 Tables\Columns\TextColumn::make('posts_count')
+                    ->label('Nombre d\'artivles')
                     ->badge()
                     ->counts('posts'),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Créé le')
+                    ->dateTime('D d M Y')
                     ->sortable()
-                    ->toggleable(isToggledHiddenByDefault: true),
+                    ->toggleable(isToggledHiddenByDefault: false),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Modifié le')
+                    ->dateTime('D d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
@@ -51,9 +63,11 @@ class CategoryResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\ViewAction::make(),
-                Tables\Actions\DeleteAction::make(),
+                Tables\Actions\ActionGroup::make([
+                    Tables\Actions\EditAction::make(),
+                    Tables\Actions\ViewAction::make(),
+                    Tables\Actions\DeleteAction::make(),
+                ]),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -65,9 +79,10 @@ class CategoryResource extends Resource
     public static function infolist(Infolist $infolist): Infolist
     {
         return $infolist->schema([
-            Section::make('Category')
+            Section::make('Catégorie')
                 ->schema([
-                    TextEntry::make('name'),
+                    TextEntry::make('name')
+                        ->label('Nom'),
                     TextEntry::make('slug'),
                 ])->columns(2)
                 ->icon('heroicon-o-square-3-stack-3d'),

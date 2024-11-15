@@ -13,8 +13,10 @@ class TagResource extends Resource
     protected static ?string $model = Tag::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-tag';
+    protected static ?string $activeNavigationIcon = 'heroicon-s-tag';
 
-    protected static ?string $navigationGroup = 'Blog';
+    protected static ?string $navigationGroup = 'Content Management';
+
 
     protected static ?int $navigationSort = 2;
 
@@ -29,16 +31,19 @@ class TagResource extends Resource
         return $table
             ->columns([
                 Tables\Columns\TextColumn::make('name')
+                    ->label('Nom')
                     ->searchable(),
                 Tables\Columns\TextColumn::make('slug'),
 
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Créé le')
+                    ->dateTime('D d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
 
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Modifié le')
+                    ->dateTime('D d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
@@ -46,7 +51,7 @@ class TagResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->slideOver(),
                 Tables\Actions\DeleteAction::make(),
                 Tables\Actions\ViewAction::make(),
             ])
@@ -68,7 +73,7 @@ class TagResource extends Resource
     {
         return [
             'index' => \Firefly\FilamentBlog\Resources\TagResource\Pages\ListTags::route('/'),
-            'edit' => \Firefly\FilamentBlog\Resources\TagResource\Pages\EditTag::route('/{record}/edit'),
+            // 'edit' => \Firefly\FilamentBlog\Resources\TagResource\Pages\EditTag::route('/{record}/edit'),
         ];
     }
 }

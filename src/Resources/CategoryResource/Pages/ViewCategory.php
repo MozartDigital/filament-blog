@@ -11,6 +11,8 @@ class ViewCategory extends ViewRecord
 {
     protected static string $resource = CategoryResource::class;
 
+    public static ?string $title = 'Détails catégories';
+
     public function getHeaderActions(): array
     {
         return [

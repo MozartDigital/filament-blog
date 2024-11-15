@@ -12,6 +12,8 @@ class ListPosts extends ListRecords
 {
     protected static string $resource = PostResource::class;
 
+    public static ?string $title = 'Liste des articles';
+
     protected function getHeaderActions(): array
     {
         return [
@@ -29,17 +31,17 @@ class ListPosts extends ListRecords
     public function getTabs(): array
     {
         return [
-            'all' => Tab::make('All'),
-            'published' => Tab::make('Published')
+            'all' => Tab::make('Tous'),
+            'published' => Tab::make('Publiés')
                 ->modifyQueryUsing(function ($query) {
                     $query->published();
                 })->icon('heroicon-o-check-badge'),
-            'pending' => Tab::make('Pending')
+            'pending' => Tab::make('En attente')
                 ->modifyQueryUsing(function ($query) {
                     $query->pending();
                 })
                 ->icon('heroicon-o-clock'),
-            'scheduled' => Tab::make('Scheduled')
+            'scheduled' => Tab::make('Programmés')
                 ->modifyQueryUsing(function ($query) {
                     $query->scheduled();
                 })

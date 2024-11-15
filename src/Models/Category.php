@@ -33,6 +33,7 @@ class Category extends Model
     {
         return [
             TextInput::make('name')
+                ->label('Nom')
                 ->live(true)
                 ->afterStateUpdated(function (Get $get, Set $set, ?string $operation, ?string $old, ?string $state) {
 

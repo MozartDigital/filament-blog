@@ -21,6 +21,8 @@ use Firefly\FilamentBlog\Resources\PostResource\Pages\ViewPost;
 use Firefly\FilamentBlog\Resources\PostResource\Widgets\BlogPostPublishedChart;
 use Firefly\FilamentBlog\Tables\Columns\UserPhotoName;
 use Illuminate\Support\Str;
+use Filament\Tables\Filters\SelectFilter;
+use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
 
 class PostResource extends Resource
 {
@@ -28,9 +30,15 @@ class PostResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-minus';
 
-    protected static ?string $navigationGroup = 'Blog';
+    protected static ?string $activeNavigationIcon = 'heroicon-s-document-minus';
 
-    protected static ?string $recordTitleAttribute = 'title';
+    protected static ?string $navigationGroup = 'Content Management';
+
+    protected static ?string $modelLabel = 'Articles';
+
+    protected static ?string $navigationLabel = 'Articles';
+
+    protected static ?string $recordTitleAttribute = 'Tître';
 
     protected static ?int $navigationSort = 3;
 
@@ -38,7 +46,17 @@ class PostResource extends Resource
 
     public static function getNavigationBadge(): ?string
     {
-        return strval(Post::count());
+        return strval(Post::where('status', PostStatus::PUBLISHED)->count());
+    }
+
+    public static function getNavigationBadgeTooltip(): ?string
+    {
+        return 'Articles publiés';
+    }
+
+    public static function getNavigationBadgeColor(): ?string
+    {
+        return Post::where('status', PostStatus::PUBLISHED)->count() > 5 ? 'success' : 'warning';
     }
 
     public static function form(Form $form): Form
@@ -53,6 +71,7 @@ class PostResource extends Resource
             ->deferLoading()
             ->columns([
                 Tables\Columns\TextColumn::make('title')
+                    ->label('Titre')
                     ->description(function (Post $record) {
                         return Str::limit($record->sub_title, 40);
                     })
@@ -62,26 +81,37 @@ class PostResource extends Resource
                     ->color(function ($state) {
                         return $state->getColor();
                     }),
-                Tables\Columns\ImageColumn::make('cover_photo_path')->label('Cover Photo'),
+                Tables\Columns\ImageColumn::make('cover_photo_path')->label('Image de couverture'),
 
                 UserPhotoName::make('user')
-                    ->label('Author'),
+                    ->label('Auteur'),
 
                 Tables\Columns\TextColumn::make('created_at')
+                    ->label('Créé le')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
+                    ->label('Modifié le')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])->defaultSort('id', 'desc')
             ->filters([
-                Tables\Filters\SelectFilter::make('user')
-                    ->relationship('user', config('filamentblog.user.columns.name'))
-                    ->searchable()
-                    ->preload()
-                    ->multiple(),
+                // Tables\Filters\SelectFilter::make('user')
+                //     ->relationship('user', config('filamentblog.user.columns.name'))
+                //     ->searchable()
+                //     ->preload()
+                //     ->multiple(),
+
+                SelectFilter::make('status')
+                    ->label('Statut')
+                    ->multiple()
+                    ->options(PostStatus::class),
+                DateRangeFilter::make('created_at')
+                    ->label('Créé le'),
+                DateRangeFilter::make('expire_at')
+                    ->label('Expire le'),
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([
@@ -99,31 +129,36 @@ class PostResource extends Resource
     public static function infolist(Infolist $infolist): Infolist
     {
         return $infolist->schema([
-            Section::make('Post')
+            Section::make('Article')
                 ->schema([
-                    Fieldset::make('General')
+                    Fieldset::make('Général')
                         ->schema([
-                            TextEntry::make('title'),
+                            TextEntry::make('title')->label('Titre'),
                             TextEntry::make('slug'),
-                            TextEntry::make('sub_title'),
+                            TextEntry::make('sub_title')->label('Sous-titre'),
                         ]),
-                    Fieldset::make('Publish Information')
+                    Fieldset::make('Information de publication')
                         ->schema([
                             TextEntry::make('status')
                                 ->badge()->color(function ($state) {
                                     return $state->getColor();
                                 }),
-                            TextEntry::make('published_at')->visible(function (Post $record) {
+                            TextEntry::make('published_at')
+                            ->label('Publié le')
+                            ->visible(function (Post $record) {
                                 return $record->status === PostStatus::PUBLISHED;
                             }),
 
-                            TextEntry::make('scheduled_for')->visible(function (Post $record) {
+                            TextEntry::make('scheduled_for')
+                            ->label('Programmé pour')
+                            ->visible(function (Post $record) {
                                 return $record->status === PostStatus::SCHEDULED;
                             }),
                         ]),
                     Fieldset::make('Description')
                         ->schema([
                             TextEntry::make('body')
+                                ->label('Contenu')
                                 ->html()
                                 ->columnSpanFull(),
                         ]),
@@ -136,7 +171,6 @@ class PostResource extends Resource
         return $page->generateNavigationItems([
             ViewPost::class,
             ManaePostSeoDetail::class,
-            ManagePostComments::class,
             EditPost::class,
         ]);
     }

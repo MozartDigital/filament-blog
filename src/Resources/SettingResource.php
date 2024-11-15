@@ -14,7 +14,11 @@ class SettingResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-cog-6-tooth';
 
-    protected static ?string $navigationGroup = 'Blog';
+    protected static ?string $navigationGroup = 'Content Management';
+
+    protected static ?string $modelLabel = 'Paramètres du site';
+
+    protected static ?string $navigationLabel = 'Paramètres du site';
 
     protected static ?int $navigationSort = 8;
 

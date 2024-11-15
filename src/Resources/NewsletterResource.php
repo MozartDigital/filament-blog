@@ -15,7 +15,13 @@ class NewsletterResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-newspaper';
 
-    protected static ?string $navigationGroup = 'Blog';
+    protected static ?string $activeNavigationIcon = 'heroicon-s-newspaper';
+
+    protected static ?string $navigationGroup = 'Content Management';
+
+    protected static ?string $modelLabel = 'Newsletter';
+
+    protected static ?string $navigationLabel = 'Newsletter';
 
     protected static ?int $navigationSort = 6;
 
@@ -41,13 +47,15 @@ class NewsletterResource extends Resource
                 Tables\Columns\TextColumn::make('email')
                     ->searchable(),
                 Tables\Columns\ToggleColumn::make('subscribed')
-                    ->label('Subscribed'),
+                    ->label('Abonné'),
                 Tables\Columns\TextColumn::make('created_at')
-                    ->dateTime()
+                    ->label('Créé le')
+                    ->dateTime('D d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
                 Tables\Columns\TextColumn::make('updated_at')
-                    ->dateTime()
+                    ->label('Modifié le')
+                    ->dateTime('D d M Y')
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
             ])
@@ -55,7 +63,7 @@ class NewsletterResource extends Resource
                 //
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
+                Tables\Actions\EditAction::make()->slideOver(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([
@@ -76,7 +84,7 @@ class NewsletterResource extends Resource
         return [
             'index' => \Firefly\FilamentBlog\Resources\NewsletterResource\Pages\ListNewsletters::route('/'),
             'create' => \Firefly\FilamentBlog\Resources\NewsletterResource\Pages\CreateNewsletter::route('/create'),
-            'edit' => \Firefly\FilamentBlog\Resources\NewsletterResource\Pages\EditNewsletter::route('/{record}/edit'),
+            // 'edit' => \Firefly\FilamentBlog\Resources\NewsletterResource\Pages\EditNewsletter::route('/{record}/edit'),
         ];
     }
 }

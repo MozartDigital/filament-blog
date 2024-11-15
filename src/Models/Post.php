@@ -138,11 +138,12 @@ class Post extends Model
     public static function getForm()
     {
         return [
-            Section::make('Blog Details')
+            Section::make('Détais de l\'article')
                 ->schema([
-                    Fieldset::make('Titles')
+                    Fieldset::make('Titre')
                         ->schema([
                             Select::make('category_id')
+                                ->label('Catégories')
                                 ->multiple()
                                 ->preload()
                                 ->createOptionForm(Category::getForm())
@@ -151,6 +152,7 @@ class Post extends Model
                                 ->columnSpanFull(),
 
                             TextInput::make('title')
+                                ->label('Titre')
                                 ->live(true)
                                 ->afterStateUpdated(fn (Set $set, ?string $state) => $set(
                                     'slug',
@@ -164,6 +166,7 @@ class Post extends Model
                                 ->maxLength(255),
 
                             Textarea::make('sub_title')
+                                ->label('Sous-titre')
                                 ->maxLength(255)
                                 ->columnSpanFull(),
 
@@ -176,24 +179,25 @@ class Post extends Model
                                 ->columnSpanFull(),
                         ]),
                     TiptapEditor::make('body')
+                        ->label('Contenu')
                         ->profile('default')
                         ->disableFloatingMenus()
                         ->extraInputAttributes(['style' => 'max-height: 30rem; min-height: 24rem'])
                         ->required()
                         ->columnSpanFull(),
-                    Fieldset::make('Feature Image')
+                    Fieldset::make('Image de couverture')
                         ->schema([
                             FileUpload::make('cover_photo_path')
-                                ->label('Cover Photo')
+                                ->label('Image')
                                 ->directory('/blog-feature-images')
                                 ->hint('This cover image is used in your blog post as a feature image. Recommended image size 1200 X 628')
                                 ->image()
                                 ->preserveFilenames()
                                 ->imageEditor()
                                 ->maxSize(1024 * 5)
-                                ->rules('dimensions:max_width=1920,max_height=1004')
+                                ->rules("dimensions:max_width=1920,max_height=1004")
                                 ->required(),
-                            TextInput::make('photo_alt_text')->required(),
+                            TextInput::make('photo_alt_text')->label('Balise ALT')->required(),
                         ])->columns(1),
 
                     Fieldset::make('Status')
@@ -206,6 +210,7 @@ class Post extends Model
                                 ->required(),
 
                             DateTimePicker::make('scheduled_for')
+                                ->label('Programmé pour le')
                                 ->visible(function ($get) {
                                     return $get('status') === PostStatus::SCHEDULED->value;
                                 })
@@ -215,10 +220,6 @@ class Post extends Model
                                 ->minDate(now()->addMinutes(5))
                                 ->native(false),
                         ]),
-                    Select::make(config('filamentblog.user.foreign_key'))
-                        ->relationship('user', config('filamentblog.user.columns.name'))
-                        ->nullable(false)
-                        ->default(auth()->id()),
 
                 ]),
         ];
