@@ -14,7 +14,7 @@ class ViewPost extends ViewRecord
     protected static string $resource = PostResource::class;
 
 
-    public static ?string $title = 'Détail article';
+    public static ?string $title = 'Détails article';
 
     public function getTitle(): string|Htmlable
     {
@@ -27,7 +27,7 @@ class ViewPost extends ViewRecord
     {
         return [
             Action::make('sendNotification')
-                ->label('Send Notification')
+                ->label('Envoyer une notification')
                 ->requiresConfirmation()
                 ->icon('heroicon-o-bell')->action(function (Post $record) {
                     event(new BlogPublished($record));
@@ -36,7 +36,7 @@ class ViewPost extends ViewRecord
                     return $record->isNotPublished();
                 }),
             Action::make('preview')
-                ->label('Preview')
+                ->label('Prévisualiser')
                 ->requiresConfirmation()
                 ->icon('heroicon-o-eye')->url(function (Post $record) {
                     return route('filamentblog.post.show', $record->slug);

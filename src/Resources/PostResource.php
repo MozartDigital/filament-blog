@@ -25,6 +25,7 @@ use Filament\Tables\Filters\SelectFilter;
 use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Contracts\Support\Htmlable;
+use Filament\Infolists\Components\ImageEntry;
 
 class PostResource extends Resource
 {
@@ -166,6 +167,12 @@ class PostResource extends Resource
                             ->visible(function (Post $record) {
                                 return $record->status === PostStatus::SCHEDULED;
                             }),
+                        ]),
+                    Fieldset::make('Image')
+                        ->schema([
+                            ImageEntry::make('cover_photo_path')
+                                ->label('Image de couverture')
+                                ->columnSpanFull(),
                         ]),
                     Fieldset::make('Description')
                         ->schema([
