@@ -115,7 +115,8 @@ class PostResource extends Resource
                     ->options(PostStatus::class),
                 SelectFilter::make('user_id')
                     ->label('Auteur')
-                    ->options(fn () => (config('filamentblog.user.model'))::whereHas('posts')->pluck('name', 'id'))
+                    ->relationship(name: 'user', titleAttribute: 'id')
+                    ->getOptionLabelFromRecordUsing(fn (Model $record) => $record->firstname.' '.$record->lastname)
                     ->searchable()
                     ->preload()
                     ->multiple(),
