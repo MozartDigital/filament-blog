@@ -22,6 +22,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
+use Filament\Forms\Components\RichEditor;
 
 class Post extends Model
 {
@@ -178,10 +179,8 @@ class Post extends Model
                                 ->relationship('tags', 'name')
                                 ->columnSpanFull(),
                         ]),
-                    TiptapEditor::make('body')
+                    RichEditor::make('body')
                         ->label('Contenu')
-                        ->profile('default')
-                        ->disableFloatingMenus()
                         ->extraInputAttributes(['style' => 'max-height: 30rem; min-height: 24rem'])
                         ->required()
                         ->columnSpanFull(),

@@ -23,6 +23,8 @@ use Firefly\FilamentBlog\Tables\Columns\UserPhotoName;
 use Illuminate\Support\Str;
 use Filament\Tables\Filters\SelectFilter;
 use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Contracts\Support\Htmlable;
 
 class PostResource extends Resource
 {
@@ -37,8 +39,6 @@ class PostResource extends Resource
     protected static ?string $modelLabel = 'Articles';
 
     protected static ?string $navigationLabel = 'Articles';
-
-    protected static ?string $recordTitleAttribute = 'Tître';
 
     protected static ?int $navigationSort = 3;
 
@@ -57,6 +57,11 @@ class PostResource extends Resource
     public static function getNavigationBadgeColor(): ?string
     {
         return Post::where('status', PostStatus::PUBLISHED)->count() > 5 ? 'success' : 'warning';
+    }
+
+    public static function getRecordTitle(?Model $record): Htmlable|string|null
+    {
+        return $record->title;
     }
 
     public static function form(Form $form): Form
@@ -197,7 +202,7 @@ class PostResource extends Resource
             'create' => \Firefly\FilamentBlog\Resources\PostResource\Pages\CreatePost::route('/create'),
             'edit' => \Firefly\FilamentBlog\Resources\PostResource\Pages\EditPost::route('/{record}/edit'),
             'view' => \Firefly\FilamentBlog\Resources\PostResource\Pages\ViewPost::route('/{record}'),
-            'comments' => \Firefly\FilamentBlog\Resources\PostResource\Pages\ManagePostComments::route('/{record}/comments'),
+            // 'comments' => \Firefly\FilamentBlog\Resources\PostResource\Pages\ManagePostComments::route('/{record}/comments'),
             'seoDetail' => \Firefly\FilamentBlog\Resources\PostResource\Pages\ManaePostSeoDetail::route('/{record}/seo-details'),
         ];
     }

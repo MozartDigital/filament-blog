@@ -10,7 +10,7 @@ class ListNewsletters extends ListRecords
 {
     protected static string $resource = NewsletterResource::class;
 
-    protected static ?string $title = 'Newsletters Subscriber';
+    protected static ?string $title = 'Liste des abonnés';
 
     protected function getHeaderActions(): array
     {

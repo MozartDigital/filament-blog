@@ -20,6 +20,9 @@ class ManaePostSeoDetail extends ManageRelatedRecords
 
     protected static ?string $navigationIcon = 'heroicon-o-globe-alt';
 
+    protected static ?string $activeNavigationIcon = 'heroicon-s-globe-alt';
+
+
     public function getTitle(): string|Htmlable
     {
 
@@ -27,12 +30,12 @@ class ManaePostSeoDetail extends ManageRelatedRecords
 
         $recordTitle = $recordTitle instanceof Htmlable ? $recordTitle->toHtml() : $recordTitle;
 
-        return 'Manage Seo Detail';
+        return "Détails Seo";
     }
 
     public static function getNavigationLabel(): string
     {
-        return 'Manage Seo Detail';
+        return 'Détails Seo';
     }
 
     protected function canCreate(): bool

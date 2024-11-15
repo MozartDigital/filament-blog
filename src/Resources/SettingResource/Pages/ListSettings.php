@@ -10,6 +10,8 @@ class ListSettings extends ListRecords
 {
     protected static string $resource = SettingResource::class;
 
+    public static ?string $title = 'Paramètre du site';
+
     protected function getHeaderActions(): array
     {
         return [
