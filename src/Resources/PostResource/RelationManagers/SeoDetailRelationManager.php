@@ -21,11 +21,11 @@ class SeoDetailRelationManager extends RelationManager
     public function table(Table $table): Table
     {
         return $table
-            ->recordTitleAttribute('title')
+            // ->recordTitleAttribute('title')
             ->columns([
-                Tables\Columns\TextColumn::make('title'),
+                Tables\Columns\TextColumn::make('title')->label('Titre'),
                 Tables\Columns\TextColumn::make('description'),
-                Tables\Columns\TextColumn::make('keywords')->badge(),
+                Tables\Columns\TextColumn::make('keywords')->label('Mots clés')->badge(),
             ])
             ->filters([
                 //

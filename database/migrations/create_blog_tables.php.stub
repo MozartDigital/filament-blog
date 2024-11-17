@@ -20,6 +20,7 @@ return new class () extends Migration {
             $table->id();
             $table->string('name', 155)->unique();
             $table->string('slug', 155)->unique();
+            $table->string('color', 60)->unique();
             $table->timestamps();
         });
 

@@ -114,17 +114,27 @@ class PostResource extends Resource
                     ->label('Statut')
                     ->multiple()
                     ->options(PostStatus::class),
-                SelectFilter::make('user_id')
-                    ->label('Auteur')
-                    ->relationship(name: 'user', titleAttribute: 'id')
-                    ->getOptionLabelFromRecordUsing(fn (Model $record) => $record->firstname.' '.$record->lastname)
+                SelectFilter::make('categories')
+                    ->label('Catégories')
+                    ->relationship(name: 'categories', titleAttribute: 'name')
                     ->searchable()
                     ->preload()
                     ->multiple(),
+                SelectFilter::make('tags')
+                    ->label('Tags')
+                    ->relationship(name: 'tags', titleAttribute: 'name')
+                    ->searchable()
+                    ->preload()
+                    ->multiple(),
+                // SelectFilter::make('user_id')
+                //     ->label('Auteur')
+                //     ->relationship(name: 'user', titleAttribute: 'id')
+                //     ->getOptionLabelFromRecordUsing(fn (Model $record) => $record->firstname.' '.$record->lastname)
+                //     ->searchable()
+                //     ->preload()
+                //     ->multiple(),
                 DateRangeFilter::make('created_at')
                     ->label('Créé le'),
-                DateRangeFilter::make('expire_at')
-                    ->label('Expire le'),
             ])
             ->actions([
                 Tables\Actions\ActionGroup::make([

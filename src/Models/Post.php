@@ -191,7 +191,7 @@ class Post extends Model
                             FileUpload::make('cover_photo_path')
                                 ->label('Image')
                                 ->directory('/blog-feature-images')
-                                ->hint('La taille de l\image recommandé est de 1920x1004')
+                                ->hint('La taille de l\'image recommandé est de 1920x1004')
                                 ->image()
                                 ->preserveFilenames()
                                 ->imageEditor()

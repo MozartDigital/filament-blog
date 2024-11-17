@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Str;
+use Filament\Forms\Components\ColorPicker;
 
 class Category extends Model
 {
@@ -18,6 +19,7 @@ class Category extends Model
     protected $fillable = [
         'name',
         'slug',
+        'color',
     ];
 
     protected $casts = [
@@ -47,6 +49,12 @@ class Category extends Model
                 ->unique(config('filamentblog.tables.prefix').'categories', 'slug', null, 'id')
                 ->readOnly()
                 ->maxLength(255),
+
+            ColorPicker::make('color')
+                ->label('Couleur')
+                ->hsl()
+                ->required()
+                ->default('#030070'),
         ];
     }
 
