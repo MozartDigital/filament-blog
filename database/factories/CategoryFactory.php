@@ -23,6 +23,7 @@ class CategoryFactory extends Factory
         return [
             'name' => $name = fake()->words(3,true),
             'slug' => Str::slug($name),
+            'color' => fake()->safeHexColor(),
         ];
     }
 }
