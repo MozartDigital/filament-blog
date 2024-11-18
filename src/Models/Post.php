@@ -5,16 +5,13 @@ namespace Mozartdigital\FilamentBlog\Models;
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\RichEditor;
 use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ToggleButtons;
-use Filament\Forms\Get;
 use Filament\Forms\Set;
-use FilamentTiptapEditor\TiptapEditor;
-use Mozartdigital\FilamentBlog\Database\Factories\PostFactory;
-use Mozartdigital\FilamentBlog\Enums\PostStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -22,7 +19,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
-use Filament\Forms\Components\RichEditor;
+use Mozartdigital\FilamentBlog\Database\Factories\PostFactory;
+use Mozartdigital\FilamentBlog\Enums\PostStatus;
 
 class Post extends Model
 {
@@ -62,7 +60,12 @@ class Post extends Model
 
     protected static function newFactory()
     {
-        return new PostFactory();
+        return new PostFactory;
+    }
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
     }
 
     public function categories()
@@ -77,7 +80,7 @@ class Post extends Model
 
     public function tags(): BelongsToMany
     {
-        return $this->belongsToMany(Tag::class,config('filamentblog.tables.prefix').'post_'.config('filamentblog.tables.prefix').'tag');
+        return $this->belongsToMany(Tag::class, config('filamentblog.tables.prefix').'post_'.config('filamentblog.tables.prefix').'tag');
     }
 
     public function user(): BelongsTo
@@ -227,6 +230,6 @@ class Post extends Model
 
     public function getTable()
     {
-        return config('filamentblog.tables.prefix') . 'posts';
+        return config('filamentblog.tables.prefix').'posts';
     }
 }

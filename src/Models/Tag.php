@@ -4,11 +4,11 @@ namespace Mozartdigital\FilamentBlog\Models;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Set;
-use Mozartdigital\FilamentBlog\Database\Factories\TagFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Str;
+use Mozartdigital\FilamentBlog\Database\Factories\TagFactory;
 
 class Tag extends Model
 {
@@ -23,6 +23,11 @@ class Tag extends Model
         'id' => 'integer',
     ];
 
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
+
     public function posts(): BelongsToMany
     {
 
@@ -33,7 +38,7 @@ class Tag extends Model
     {
         return [
             TextInput::make('name')
-                ->live(true)->afterStateUpdated(fn(Set $set, ?string $state) => $set(
+                ->live(true)->afterStateUpdated(fn (Set $set, ?string $state) => $set(
                     'slug',
                     Str::slug($state)
                 ))
@@ -50,11 +55,11 @@ class Tag extends Model
 
     protected static function newFactory()
     {
-        return new TagFactory();
+        return new TagFactory;
     }
 
     public function getTable()
     {
-        return config('filamentblog.tables.prefix') . 'tags';
+        return config('filamentblog.tables.prefix').'tags';
     }
 }

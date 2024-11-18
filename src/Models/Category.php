@@ -2,15 +2,15 @@
 
 namespace Mozartdigital\FilamentBlog\Models;
 
+use Filament\Forms\Components\ColorPicker;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
-use Mozartdigital\FilamentBlog\Database\Factories\CategoryFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Support\Str;
-use Filament\Forms\Components\ColorPicker;
+use Mozartdigital\FilamentBlog\Database\Factories\CategoryFactory;
 
 class Category extends Model
 {
@@ -25,6 +25,11 @@ class Category extends Model
     protected $casts = [
         'id' => 'integer',
     ];
+
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 
     public function posts(): BelongsToMany
     {
@@ -60,11 +65,11 @@ class Category extends Model
 
     protected static function newFactory()
     {
-        return new CategoryFactory();
+        return new CategoryFactory;
     }
 
     public function getTable()
     {
-        return config('filamentblog.tables.prefix') . 'categories';
+        return config('filamentblog.tables.prefix').'categories';
     }
 }
