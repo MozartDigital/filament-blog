@@ -157,6 +157,9 @@ class Post extends Model
 
     protected function getFeaturePhotoAttribute()
     {
+        if (Str::startsWith($this->cover_photo_path, 'http')) {
+            return $this->cover_photo_path;
+        }
         return asset('storage/'.$this->cover_photo_path);
     }
 
