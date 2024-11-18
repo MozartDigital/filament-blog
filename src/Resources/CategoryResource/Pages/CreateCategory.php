@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\CategoryResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\CategoryResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Firefly\FilamentBlog\Resources\CategoryResource;
+use Mozartdigital\FilamentBlog\Resources\CategoryResource;
 
 class CreateCategory extends CreateRecord
 {

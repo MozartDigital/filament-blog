@@ -1,10 +1,10 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\TagResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\TagResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Firefly\FilamentBlog\Resources\TagResource;
+use Mozartdigital\FilamentBlog\Resources\TagResource;
 
 class EditTag extends EditRecord
 {

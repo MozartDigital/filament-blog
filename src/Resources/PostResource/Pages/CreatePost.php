@@ -1,13 +1,13 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\PostResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\PostResource\Pages;
 
 use Carbon\Carbon;
 use Filament\Resources\Pages\CreateRecord;
-use Firefly\FilamentBlog\Events\BlogPublished;
-use Firefly\FilamentBlog\Jobs\PostScheduleJob;
-use Firefly\FilamentBlog\Resources\PostResource;
-use Firefly\FilamentBlog\Resources\SeoDetailResource;
+use Mozartdigital\FilamentBlog\Events\BlogPublished;
+use Mozartdigital\FilamentBlog\Jobs\PostScheduleJob;
+use Mozartdigital\FilamentBlog\Resources\PostResource;
+use Mozartdigital\FilamentBlog\Resources\SeoDetailResource;
 
 class CreatePost extends CreateRecord
 {

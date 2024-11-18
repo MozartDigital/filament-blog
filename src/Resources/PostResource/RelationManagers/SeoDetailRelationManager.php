@@ -1,12 +1,12 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\PostResource\RelationManagers;
+namespace Mozartdigital\FilamentBlog\Resources\PostResource\RelationManagers;
 
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Models\SeoDetail;
+use Mozartdigital\FilamentBlog\Models\SeoDetail;
 
 class SeoDetailRelationManager extends RelationManager
 {

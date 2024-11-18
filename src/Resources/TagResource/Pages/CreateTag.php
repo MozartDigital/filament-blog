@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\TagResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\TagResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Firefly\FilamentBlog\Resources\TagResource;
+use Mozartdigital\FilamentBlog\Resources\TagResource;
 
 class CreateTag extends CreateRecord
 {

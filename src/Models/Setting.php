@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Models;
+namespace Mozartdigital\FilamentBlog\Models;
 
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\KeyValue;
@@ -9,7 +9,7 @@ use Filament\Forms\Components\Section;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\ColorPicker;
-use Firefly\FilamentBlog\Database\Factories\SettingFactory;
+use Mozartdigital\FilamentBlog\Database\Factories\SettingFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\Console\Descriptor\TextDescriptor;

@@ -1,12 +1,12 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources;
+namespace Mozartdigital\FilamentBlog\Resources;
 
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Models\Setting;
+use Mozartdigital\FilamentBlog\Models\Setting;
 
 class SettingResource extends Resource
 {
@@ -81,9 +81,9 @@ class SettingResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Firefly\FilamentBlog\Resources\SettingResource\Pages\ListSettings::route('/'),
-            'create' => \Firefly\FilamentBlog\Resources\SettingResource\Pages\CreateSetting::route('/create'),
-            'edit' => \Firefly\FilamentBlog\Resources\SettingResource\Pages\EditSetting::route('/{record}/edit'),
+            'index' => \Mozartdigital\FilamentBlog\Resources\SettingResource\Pages\ListSettings::route('/'),
+            'create' => \Mozartdigital\FilamentBlog\Resources\SettingResource\Pages\CreateSetting::route('/create'),
+            'edit' => \Mozartdigital\FilamentBlog\Resources\SettingResource\Pages\EditSetting::route('/{record}/edit'),
         ];
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Firefly\FilamentBlog\Models;
+namespace Mozartdigital\FilamentBlog\Models;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
-use Firefly\FilamentBlog\Database\Factories\CategoryFactory;
+use Mozartdigital\FilamentBlog\Database\Factories\CategoryFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;

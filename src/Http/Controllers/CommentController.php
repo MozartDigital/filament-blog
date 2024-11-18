@@ -1,8 +1,8 @@
 <?php
 
-namespace Firefly\FilamentBlog\Http\Controllers;
+namespace Mozartdigital\FilamentBlog\Http\Controllers;
 
-use Firefly\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Models\Post;
 use Illuminate\Http\Request;
 
 class CommentController extends Controller

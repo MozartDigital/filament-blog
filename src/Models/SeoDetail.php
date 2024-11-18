@@ -1,12 +1,12 @@
 <?php
 
-namespace Firefly\FilamentBlog\Models;
+namespace Mozartdigital\FilamentBlog\Models;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
-use Firefly\FilamentBlog\Database\Factories\SeoDetailFactory;
+use Mozartdigital\FilamentBlog\Database\Factories\SeoDetailFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Models;
+namespace Mozartdigital\FilamentBlog\Models;
 
 use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Fieldset;
@@ -13,8 +13,8 @@ use Filament\Forms\Components\ToggleButtons;
 use Filament\Forms\Get;
 use Filament\Forms\Set;
 use FilamentTiptapEditor\TiptapEditor;
-use Firefly\FilamentBlog\Database\Factories\PostFactory;
-use Firefly\FilamentBlog\Enums\PostStatus;
+use Mozartdigital\FilamentBlog\Database\Factories\PostFactory;
+use Mozartdigital\FilamentBlog\Enums\PostStatus;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;

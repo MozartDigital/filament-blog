@@ -1,10 +1,10 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\TagResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\TagResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Firefly\FilamentBlog\Resources\TagResource;
+use Mozartdigital\FilamentBlog\Resources\TagResource;
 
 class ListTags extends ListRecords
 {

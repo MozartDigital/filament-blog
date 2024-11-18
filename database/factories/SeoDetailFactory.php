@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Database\Factories;
+namespace Mozartdigital\FilamentBlog\Database\Factories;
 
-use Firefly\FilamentBlog\Models\Post;
-use Firefly\FilamentBlog\Models\SeoDetail;
+use Mozartdigital\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Models\SeoDetail;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class SeoDetailFactory extends Factory

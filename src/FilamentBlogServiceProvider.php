@@ -1,15 +1,15 @@
 <?php
 
-namespace Firefly\FilamentBlog;
+namespace Mozartdigital\FilamentBlog;
 
-use Firefly\FilamentBlog\Components\Card;
-use Firefly\FilamentBlog\Components\Comment;
-use Firefly\FilamentBlog\Components\FeatureCard;
-use Firefly\FilamentBlog\Components\Header;
-use Firefly\FilamentBlog\Components\HeaderCategory;
-use Firefly\FilamentBlog\Components\Layout;
-use Firefly\FilamentBlog\Components\RecentPost;
-use Firefly\FilamentBlog\Console\Commands\RenameTablesCommand;
+use Mozartdigital\FilamentBlog\Components\Card;
+use Mozartdigital\FilamentBlog\Components\Comment;
+use Mozartdigital\FilamentBlog\Components\FeatureCard;
+use Mozartdigital\FilamentBlog\Components\Header;
+use Mozartdigital\FilamentBlog\Components\HeaderCategory;
+use Mozartdigital\FilamentBlog\Components\Layout;
+use Mozartdigital\FilamentBlog\Components\RecentPost;
+use Mozartdigital\FilamentBlog\Console\Commands\RenameTablesCommand;
 use Illuminate\Config\Repository as Config;
 use Illuminate\Support\Facades\Route;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
@@ -59,7 +59,7 @@ class FilamentBlogServiceProvider extends PackageServiceProvider
     public function register()
     {
         Route::bind('post', function ($value) {
-            return \Firefly\FilamentBlog\Models\Post::where('slug', $value)->published()->firstOrFail();
+            return \Mozartdigital\FilamentBlog\Models\Post::where('slug', $value)->published()->firstOrFail();
         });
 
         $this->app->register(EventServiceProvider::class);

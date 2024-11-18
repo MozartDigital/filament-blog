@@ -1,11 +1,11 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\PostResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\PostResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Firefly\FilamentBlog\Enums\PostStatus;
-use Firefly\FilamentBlog\Resources\PostResource;
+use Mozartdigital\FilamentBlog\Enums\PostStatus;
+use Mozartdigital\FilamentBlog\Resources\PostResource;
 
 class EditPost extends EditRecord
 {

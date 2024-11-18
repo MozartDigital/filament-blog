@@ -1,12 +1,12 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources;
+namespace Mozartdigital\FilamentBlog\Resources;
 
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Models\SeoDetail;
+use Mozartdigital\FilamentBlog\Models\SeoDetail;
 
 class SeoDetailResource extends Resource
 {
@@ -81,9 +81,9 @@ class SeoDetailResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Firefly\FilamentBlog\Resources\SeoDetailResource\Pages\ListSeoDetails::route('/'),
-            'create' => \Firefly\FilamentBlog\Resources\SeoDetailResource\Pages\CreateSeoDetail::route('/create'),
-            // 'edit' => \Firefly\FilamentBlog\Resources\SeoDetailResource\Pages\EditSeoDetail::route('/{record}/edit'),
+            'index' => \Mozartdigital\FilamentBlog\Resources\SeoDetailResource\Pages\ListSeoDetails::route('/'),
+            'create' => \Mozartdigital\FilamentBlog\Resources\SeoDetailResource\Pages\CreateSeoDetail::route('/create'),
+            // 'edit' => \Mozartdigital\FilamentBlog\Resources\SeoDetailResource\Pages\EditSeoDetail::route('/{record}/edit'),
         ];
     }
 }

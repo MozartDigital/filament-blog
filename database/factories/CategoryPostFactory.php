@@ -1,8 +1,8 @@
 <?php
 
-namespace Firefly\FilamentBlog\Database\Factories;
+namespace Mozartdigital\FilamentBlog\Database\Factories;
 
-use Firefly\FilamentBlog\Models\CategoryPost;
+use Mozartdigital\FilamentBlog\Models\CategoryPost;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CategoryPostFactory extends Factory

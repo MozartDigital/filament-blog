@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\PostResource\Widgets;
+namespace Mozartdigital\FilamentBlog\Resources\PostResource\Widgets;
 
 use Filament\Widgets\StatsOverviewWidget as BaseWidget;
-use Firefly\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Models\Post;
 
 class BlogPostPublishedChart extends BaseWidget
 {

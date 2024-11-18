@@ -1,8 +1,8 @@
 <?php
 
-namespace Firefly\FilamentBlog\Database\Factories;
+namespace Mozartdigital\FilamentBlog\Database\Factories;
 
-use Firefly\FilamentBlog\Models\Setting;
+use Mozartdigital\FilamentBlog\Models\Setting;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**

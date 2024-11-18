@@ -1,7 +1,7 @@
 <?php
 
-use Firefly\FilamentBlog\Models\Category;
-use Firefly\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Models\Category;
+use Mozartdigital\FilamentBlog\Models\Post;
 
 
 

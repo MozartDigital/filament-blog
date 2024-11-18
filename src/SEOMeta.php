@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog;
+namespace Mozartdigital\FilamentBlog;
 
 use Illuminate\Config\Repository as Config;
 use Illuminate\Support\Collection;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Tables\Columns;
+namespace Mozartdigital\FilamentBlog\Tables\Columns;
 
 use Filament\Tables\Columns\Column;
 

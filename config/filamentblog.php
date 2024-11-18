@@ -11,7 +11,7 @@
  * | The recaptcha configuration is for setting up the recaptcha for the blog.
  */
 
-use Firefly\FilamentBlog\Models\User;
+use Mozartdigital\FilamentBlog\Models\User;
 
 return [
     'tables' => [
@@ -33,7 +33,7 @@ return [
         'foreign_key' => 'user_id',
         'columns' => [
             'name' => 'name',
-            'avatar' => 'profile_photo_url', // column name for avatar
+            'avatar' => 'avatar', // column name for avatar
         ],
     ],
     'seo' => [

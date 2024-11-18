@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources;
+namespace Mozartdigital\FilamentBlog\Resources;
 
 use Filament\Forms\Form;
 use Filament\Infolists\Components\Fieldset;
@@ -12,14 +12,14 @@ use Filament\Resources\Pages\Page;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Enums\PostStatus;
-use Firefly\FilamentBlog\Models\Post;
-use Firefly\FilamentBlog\Resources\PostResource\Pages\EditPost;
-use Firefly\FilamentBlog\Resources\PostResource\Pages\ManaePostSeoDetail;
-use Firefly\FilamentBlog\Resources\PostResource\Pages\ManagePostComments;
-use Firefly\FilamentBlog\Resources\PostResource\Pages\ViewPost;
-use Firefly\FilamentBlog\Resources\PostResource\Widgets\BlogPostPublishedChart;
-use Firefly\FilamentBlog\Tables\Columns\UserPhotoName;
+use Mozartdigital\FilamentBlog\Enums\PostStatus;
+use Mozartdigital\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Resources\PostResource\Pages\EditPost;
+use Mozartdigital\FilamentBlog\Resources\PostResource\Pages\ManaePostSeoDetail;
+use Mozartdigital\FilamentBlog\Resources\PostResource\Pages\ManagePostComments;
+use Mozartdigital\FilamentBlog\Resources\PostResource\Pages\ViewPost;
+use Mozartdigital\FilamentBlog\Resources\PostResource\Widgets\BlogPostPublishedChart;
+use Mozartdigital\FilamentBlog\Tables\Columns\UserPhotoName;
 use Illuminate\Support\Str;
 use Filament\Tables\Filters\SelectFilter;
 use Malzariey\FilamentDaterangepickerFilter\Filters\DateRangeFilter;
@@ -207,8 +207,8 @@ class PostResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //            \Firefly\FilamentBlog\Resources\PostResource\RelationManagers\SeoDetailRelationManager::class,
-            //            \Firefly\FilamentBlog\Resources\PostResource\RelationManagers\CommentsRelationManager::class,
+            //            \Mozartdigital\FilamentBlog\Resources\PostResource\RelationManagers\SeoDetailRelationManager::class,
+            //            \Mozartdigital\FilamentBlog\Resources\PostResource\RelationManagers\CommentsRelationManager::class,
         ];
     }
 
@@ -222,12 +222,12 @@ class PostResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Firefly\FilamentBlog\Resources\PostResource\Pages\ListPosts::route('/'),
-            'create' => \Firefly\FilamentBlog\Resources\PostResource\Pages\CreatePost::route('/create'),
-            'edit' => \Firefly\FilamentBlog\Resources\PostResource\Pages\EditPost::route('/{record}/edit'),
-            'view' => \Firefly\FilamentBlog\Resources\PostResource\Pages\ViewPost::route('/{record}'),
-            // 'comments' => \Firefly\FilamentBlog\Resources\PostResource\Pages\ManagePostComments::route('/{record}/comments'),
-            'seoDetail' => \Firefly\FilamentBlog\Resources\PostResource\Pages\ManaePostSeoDetail::route('/{record}/seo-details'),
+            'index' => \Mozartdigital\FilamentBlog\Resources\PostResource\Pages\ListPosts::route('/'),
+            'create' => \Mozartdigital\FilamentBlog\Resources\PostResource\Pages\CreatePost::route('/create'),
+            'edit' => \Mozartdigital\FilamentBlog\Resources\PostResource\Pages\EditPost::route('/{record}/edit'),
+            'view' => \Mozartdigital\FilamentBlog\Resources\PostResource\Pages\ViewPost::route('/{record}'),
+            // 'comments' => \Mozartdigital\FilamentBlog\Resources\PostResource\Pages\ManagePostComments::route('/{record}/comments'),
+            'seoDetail' => \Mozartdigital\FilamentBlog\Resources\PostResource\Pages\ManaePostSeoDetail::route('/{record}/seo-details'),
         ];
     }
 }

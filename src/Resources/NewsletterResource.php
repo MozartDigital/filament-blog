@@ -1,13 +1,13 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources;
+namespace Mozartdigital\FilamentBlog\Resources;
 
 use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Models\NewsLetter;
+use Mozartdigital\FilamentBlog\Models\NewsLetter;
 
 class NewsletterResource extends Resource
 {
@@ -82,9 +82,9 @@ class NewsletterResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Firefly\FilamentBlog\Resources\NewsletterResource\Pages\ListNewsletters::route('/'),
-            'create' => \Firefly\FilamentBlog\Resources\NewsletterResource\Pages\CreateNewsletter::route('/create'),
-            // 'edit' => \Firefly\FilamentBlog\Resources\NewsletterResource\Pages\EditNewsletter::route('/{record}/edit'),
+            'index' => \Mozartdigital\FilamentBlog\Resources\NewsletterResource\Pages\ListNewsletters::route('/'),
+            'create' => \Mozartdigital\FilamentBlog\Resources\NewsletterResource\Pages\CreateNewsletter::route('/create'),
+            // 'edit' => \Mozartdigital\FilamentBlog\Resources\NewsletterResource\Pages\EditNewsletter::route('/{record}/edit'),
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Services;
+namespace Mozartdigital\FilamentBlog\Services;
 
 class SEOService
 {

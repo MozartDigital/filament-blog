@@ -1,10 +1,10 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\SettingResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\SettingResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\ListRecords;
-use Firefly\FilamentBlog\Resources\SettingResource;
+use Mozartdigital\FilamentBlog\Resources\SettingResource;
 
 class ListSettings extends ListRecords
 {

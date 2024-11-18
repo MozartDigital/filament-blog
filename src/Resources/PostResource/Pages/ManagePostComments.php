@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\PostResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\PostResource\Pages;
 
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Textarea;
@@ -12,8 +12,8 @@ use Filament\Infolists\Infolist;
 use Filament\Resources\Pages\ManageRelatedRecords;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Resources\PostResource;
-use Firefly\FilamentBlog\Tables\Columns\UserPhotoName;
+use Mozartdigital\FilamentBlog\Resources\PostResource;
+use Mozartdigital\FilamentBlog\Tables\Columns\UserPhotoName;
 use Illuminate\Contracts\Support\Htmlable;
 
 class ManagePostComments extends ManageRelatedRecords

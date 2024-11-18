@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\SettingResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\SettingResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Firefly\FilamentBlog\Resources\SettingResource;
+use Mozartdigital\FilamentBlog\Resources\SettingResource;
 
 class CreateSetting extends CreateRecord
 {

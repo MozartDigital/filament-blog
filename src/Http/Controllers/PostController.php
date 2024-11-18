@@ -1,11 +1,11 @@
 <?php
 
-namespace Firefly\FilamentBlog\Http\Controllers;
+namespace Mozartdigital\FilamentBlog\Http\Controllers;
 
-use Firefly\FilamentBlog\Facades\SEOMeta;
-use Firefly\FilamentBlog\Models\NewsLetter;
-use Firefly\FilamentBlog\Models\Post;
-use Firefly\FilamentBlog\Models\ShareSnippet;
+use Mozartdigital\FilamentBlog\Facades\SEOMeta;
+use Mozartdigital\FilamentBlog\Models\NewsLetter;
+use Mozartdigital\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Models\ShareSnippet;
 use Illuminate\Http\Request;
 
 class PostController extends Controller

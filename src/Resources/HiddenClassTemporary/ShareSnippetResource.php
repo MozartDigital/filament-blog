@@ -1,13 +1,13 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources;
+namespace Mozartdigital\FilamentBlog\Resources;
 
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Models\ShareSnippet;
+use Mozartdigital\FilamentBlog\Models\ShareSnippet;
 
 class ShareSnippetResource extends Resource
 {
@@ -71,8 +71,8 @@ class ShareSnippetResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Firefly\FilamentBlog\Resources\ShareSnippetResource\Pages\ListShareSnippets::route('/'),
-            'edit' => \Firefly\FilamentBlog\Resources\ShareSnippetResource\Pages\EditShareSnippet::route('/{record}/edit'),
+            'index' => \Mozartdigital\FilamentBlog\Resources\ShareSnippetResource\Pages\ListShareSnippets::route('/'),
+            'edit' => \Mozartdigital\FilamentBlog\Resources\ShareSnippetResource\Pages\EditShareSnippet::route('/{record}/edit'),
         ];
     }
 }

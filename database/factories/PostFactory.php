@@ -1,10 +1,10 @@
 <?php
 
-namespace Firefly\FilamentBlog\Database\Factories;
+namespace Mozartdigital\FilamentBlog\Database\Factories;
 
 use Carbon\Carbon;
-use Firefly\FilamentBlog\Enums\PostStatus;
-use Firefly\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Enums\PostStatus;
+use Mozartdigital\FilamentBlog\Models\Post;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 

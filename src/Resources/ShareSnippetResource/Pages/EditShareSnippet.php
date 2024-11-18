@@ -1,10 +1,10 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\ShareSnippetResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\ShareSnippetResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Firefly\FilamentBlog\Resources\ShareSnippetResource;
+use Mozartdigital\FilamentBlog\Resources\ShareSnippetResource;
 
 class EditShareSnippet extends EditRecord
 {

@@ -3,7 +3,7 @@
 use function Pest\Laravel\get;
 
 beforeEach(function () {
-    $setting = \Firefly\FilamentBlog\Models\Setting::factory()->create();
+    $setting = \Mozartdigital\FilamentBlog\Models\Setting::factory()->create();
 //    dd($setting);
 });
 it('return success for all post page', function () {

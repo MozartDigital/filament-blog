@@ -1,10 +1,10 @@
 <?php
 
-use Firefly\FilamentBlog\Exceptions\CannotSendEmail;
-use Firefly\FilamentBlog\Listeners\SendBlogPublishedNotification;
-use Firefly\FilamentBlog\Mails\BlogPublished;
-use Firefly\FilamentBlog\Models\NewsLetter;
-use Firefly\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Exceptions\CannotSendEmail;
+use Mozartdigital\FilamentBlog\Listeners\SendBlogPublishedNotification;
+use Mozartdigital\FilamentBlog\Mails\BlogPublished;
+use Mozartdigital\FilamentBlog\Models\NewsLetter;
+use Mozartdigital\FilamentBlog\Models\Post;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Mail;
 
@@ -17,12 +17,12 @@ it('check event listener is attached to the event', function () {
 
     // Assert
     Event::fake();
-    event(new \Firefly\FilamentBlog\Events\BlogPublished($post));
+    event(new \Mozartdigital\FilamentBlog\Events\BlogPublished($post));
 
-    Event::assertDispatched(\Firefly\FilamentBlog\Events\BlogPublished::class);
+    Event::assertDispatched(\Mozartdigital\FilamentBlog\Events\BlogPublished::class);
 
     Event::assertListening(
-        \Firefly\FilamentBlog\Events\BlogPublished::class,
+        \Mozartdigital\FilamentBlog\Events\BlogPublished::class,
         SendBlogPublishedNotification::class
     );
 

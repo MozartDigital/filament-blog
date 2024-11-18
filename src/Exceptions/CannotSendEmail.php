@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Exceptions;
+namespace Mozartdigital\FilamentBlog\Exceptions;
 
 use Exception;
 

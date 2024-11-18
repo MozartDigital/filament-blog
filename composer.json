@@ -25,19 +25,19 @@
   },
   "autoload": {
     "psr-4": {
-      "Firefly\\FilamentBlog\\": "src/",
-      "Firefly\\FilamentBlog\\Database\\Factories\\": "database/factories/"
+      "Mozartdigital\\FilamentBlog\\": "src/",
+      "Mozartdigital\\FilamentBlog\\Database\\Factories\\": "database/factories/"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Firefly\\FilamentBlog\\Tests\\": "tests"
+      "Mozartdigital\\FilamentBlog\\Tests\\": "tests"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Firefly\\FilamentBlog\\FilamentBlogServiceProvider"
+        "Mozartdigital\\FilamentBlog\\FilamentBlogServiceProvider"
       ]
     }
   },

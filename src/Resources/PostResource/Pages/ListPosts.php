@@ -1,12 +1,12 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\PostResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\PostResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Components\Tab;
 use Filament\Resources\Pages\ListRecords;
-use Firefly\FilamentBlog\Resources\PostResource;
-use Firefly\FilamentBlog\Resources\PostResource\Widgets\BlogPostPublishedChart;
+use Mozartdigital\FilamentBlog\Resources\PostResource;
+use Mozartdigital\FilamentBlog\Resources\PostResource\Widgets\BlogPostPublishedChart;
 
 class ListPosts extends ListRecords
 {

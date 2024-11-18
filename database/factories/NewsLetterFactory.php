@@ -1,8 +1,8 @@
 <?php
 
-namespace Firefly\FilamentBlog\Database\Factories;
+namespace Mozartdigital\FilamentBlog\Database\Factories;
 
-use Firefly\FilamentBlog\Models\NewsLetter;
+use Mozartdigital\FilamentBlog\Models\NewsLetter;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class NewsLetterFactory extends Factory

@@ -1,8 +1,8 @@
 <?php
 
-namespace Firefly\FilamentBlog\Http\Controllers;
+namespace Mozartdigital\FilamentBlog\Http\Controllers;
 
-use Firefly\FilamentBlog\Models\Category;
+use Mozartdigital\FilamentBlog\Models\Category;
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller

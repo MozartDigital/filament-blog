@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Database\Factories;
+namespace Mozartdigital\FilamentBlog\Database\Factories;
 
-use Firefly\FilamentBlog\Models\Comment;
-use Firefly\FilamentBlog\Models\User;
+use Mozartdigital\FilamentBlog\Models\Comment;
+use Mozartdigital\FilamentBlog\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class CommentFactory extends Factory

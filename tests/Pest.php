@@ -11,7 +11,7 @@
 |
 */
 
-use Firefly\FilamentBlog\Tests\TestCase;
+use Mozartdigital\FilamentBlog\Tests\TestCase;
 use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
 
 uses(TestCase::class, LazilyRefreshDatabase::class)->in('Feature');
@@ -44,7 +44,7 @@ expect()->extend('toBeOne', function () {
 
 function setSettingData()
 {
-    \Firefly\FilamentBlog\Models\Setting::factory()->create();
+    \Mozartdigital\FilamentBlog\Models\Setting::factory()->create();
 }
 
 

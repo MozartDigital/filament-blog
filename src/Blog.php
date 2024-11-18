@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog;
+namespace Mozartdigital\FilamentBlog;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;

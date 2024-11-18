@@ -1,14 +1,14 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources;
+namespace Mozartdigital\FilamentBlog\Resources;
 
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Actions\ActionGroup;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Models\Comment;
-use Firefly\FilamentBlog\Tables\Columns\UserPhotoName;
+use Mozartdigital\FilamentBlog\Models\Comment;
+use Mozartdigital\FilamentBlog\Tables\Columns\UserPhotoName;
 
 class CommentResource extends Resource
 {
@@ -93,9 +93,9 @@ class CommentResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Firefly\FilamentBlog\Resources\CommentResource\Pages\ListComments::route('/'),
-            'create' => \Firefly\FilamentBlog\Resources\CommentResource\Pages\CreateComment::route('/create'),
-            'edit' => \Firefly\FilamentBlog\Resources\CommentResource\Pages\EditComment::route('/{record}/edit'),
+            'index' => \Mozartdigital\FilamentBlog\Resources\CommentResource\Pages\ListComments::route('/'),
+            'create' => \Mozartdigital\FilamentBlog\Resources\CommentResource\Pages\CreateComment::route('/create'),
+            'edit' => \Mozartdigital\FilamentBlog\Resources\CommentResource\Pages\EditComment::route('/{record}/edit'),
         ];
     }
 }

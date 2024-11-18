@@ -1,8 +1,8 @@
 <?php
 
-namespace Firefly\FilamentBlog\Database\Factories;
+namespace Mozartdigital\FilamentBlog\Database\Factories;
 
-use Firefly\FilamentBlog\Models\PostTag;
+use Mozartdigital\FilamentBlog\Models\PostTag;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class PostTagFactory extends Factory

@@ -1,8 +1,8 @@
 <?php
 
-namespace Firefly\FilamentBlog\Tests;
+namespace Mozartdigital\FilamentBlog\Tests;
 
-use Firefly\FilamentBlog\FilamentBlogServiceProvider;
+use Mozartdigital\FilamentBlog\FilamentBlogServiceProvider;
 use Orchestra\Testbench\TestCase as Orchestra;
 
 abstract class TestCase extends Orchestra

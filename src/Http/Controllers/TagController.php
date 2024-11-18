@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Http\Controllers;
+namespace Mozartdigital\FilamentBlog\Http\Controllers;
 
-use Firefly\FilamentBlog\Models\Category;
-use Firefly\FilamentBlog\Models\Tag;
+use Mozartdigital\FilamentBlog\Models\Category;
+use Mozartdigital\FilamentBlog\Models\Tag;
 
 class TagController extends Controller
 {

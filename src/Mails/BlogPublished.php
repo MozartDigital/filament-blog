@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Mails;
+namespace Mozartdigital\FilamentBlog\Mails;
 
-use Firefly\FilamentBlog\Exceptions\CannotSendEmail;
-use Firefly\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Exceptions\CannotSendEmail;
+use Mozartdigital\FilamentBlog\Models\Post;
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;

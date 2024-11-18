@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\PostResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\PostResource\Pages;
 
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\Textarea;
@@ -9,7 +9,7 @@ use Filament\Forms\Form;
 use Filament\Resources\Pages\ManageRelatedRecords;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Resources\PostResource;
+use Mozartdigital\FilamentBlog\Resources\PostResource;
 use Illuminate\Contracts\Support\Htmlable;
 
 class ManaePostSeoDetail extends ManageRelatedRecords

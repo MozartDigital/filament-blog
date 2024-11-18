@@ -1,8 +1,8 @@
 <?php
 
-namespace Firefly\FilamentBlog\Components;
+namespace Mozartdigital\FilamentBlog\Components;
 
-use Firefly\FilamentBlog\Models\Setting;
+use Mozartdigital\FilamentBlog\Models\Setting;
 use Illuminate\View\Component;
 
 class Layout extends Component

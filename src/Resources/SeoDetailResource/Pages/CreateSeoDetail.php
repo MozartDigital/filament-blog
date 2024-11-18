@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\SeoDetailResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\SeoDetailResource\Pages;
 
 use Filament\Resources\Pages\CreateRecord;
-use Firefly\FilamentBlog\Resources\SeoDetailResource;
+use Mozartdigital\FilamentBlog\Resources\SeoDetailResource;
 
 class CreateSeoDetail extends CreateRecord
 {

@@ -1,4 +1,4 @@
-@props(['title' =>'Firefly Blog', 'logo' => null] )
+@props(['title' =>'Mozartdigital Blog', 'logo' => null] )
 <header @click.outside="showSearchModal = false" x-data="{ showSearchModal: false }" class="sticky top-0 z-[94035] mb-4">
     <div class="py-4 bg-white border-b">
         <div class="container mx-auto">
@@ -9,7 +9,7 @@
                         <img src="{{ $logo }}" alt="{{ $title }}" class="max-h-[60px]" />
                         @else
                         <strong class="text-2xl  text-primary-600">
-                            {{ $title ?: 'Firefly Blog' }}
+                            {{ $title ?: 'Mozartdigital Blog' }}
                         </strong>
                         @endif
                     </a>

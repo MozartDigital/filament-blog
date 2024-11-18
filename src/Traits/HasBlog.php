@@ -1,9 +1,9 @@
 <?php
 
-namespace Firefly\FilamentBlog\Traits;
+namespace Mozartdigital\FilamentBlog\Traits;
 
-use Firefly\FilamentBlog\Models\Comment;
-use Firefly\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Models\Comment;
+use Mozartdigital\FilamentBlog\Models\Post;
 
 trait HasBlog
 {

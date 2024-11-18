@@ -1,10 +1,10 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\NewsletterResource\Pages;
+namespace Mozartdigital\FilamentBlog\Resources\NewsletterResource\Pages;
 
 use Filament\Actions;
 use Filament\Resources\Pages\EditRecord;
-use Firefly\FilamentBlog\Resources\NewsletterResource;
+use Mozartdigital\FilamentBlog\Resources\NewsletterResource;
 
 class EditNewsletter extends EditRecord
 {

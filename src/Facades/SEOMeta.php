@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Facades;
+namespace Mozartdigital\FilamentBlog\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

@@ -1,12 +1,12 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources;
+namespace Mozartdigital\FilamentBlog\Resources;
 
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Models\Tag;
+use Mozartdigital\FilamentBlog\Models\Tag;
 
 class TagResource extends Resource
 {
@@ -72,8 +72,8 @@ class TagResource extends Resource
     public static function getPages(): array
     {
         return [
-            'index' => \Firefly\FilamentBlog\Resources\TagResource\Pages\ListTags::route('/'),
-            // 'edit' => \Firefly\FilamentBlog\Resources\TagResource\Pages\EditTag::route('/{record}/edit'),
+            'index' => \Mozartdigital\FilamentBlog\Resources\TagResource\Pages\ListTags::route('/'),
+            // 'edit' => \Mozartdigital\FilamentBlog\Resources\TagResource\Pages\EditTag::route('/{record}/edit'),
         ];
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Firefly\FilamentBlog\Console\Commands;
+namespace Mozartdigital\FilamentBlog\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;

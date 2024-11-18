@@ -1,12 +1,12 @@
 <?php
 
-namespace Firefly\FilamentBlog\Resources\CategoryResource\RelationManagers;
+namespace Mozartdigital\FilamentBlog\Resources\CategoryResource\RelationManagers;
 
 use Filament\Forms\Form;
 use Filament\Resources\RelationManagers\RelationManager;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Firefly\FilamentBlog\Models\Post;
+use Mozartdigital\FilamentBlog\Models\Post;
 use Illuminate\Support\Str;
 
 class PostsRelationManager extends RelationManager
