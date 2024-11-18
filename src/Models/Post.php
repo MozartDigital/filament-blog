@@ -128,6 +128,25 @@ class Post extends Model
         return $this->status === PostStatus::PUBLISHED;
     }
 
+    public function scopeFilter($query, array $filters)
+    { 
+        if ( $filters['search']??false) $filters['search'] = str_replace(' ', '%', $filters['search']);
+
+        $query->when($filters['search']??false, fn($query, $search) =>
+            $query->where(fn($query) =>
+                $query->where('title','like','%'.$search.'%')
+                      ->orWhere('sub_title','like','%'.$search.'%'))
+                );
+
+        $query->when($filters['category']??false,fn ($query, $category) =>
+                $query->whereHas('categories',fn ($query) =>
+                $query->where('slug',$category)));
+                      
+        $query->when($filters['tag']??false,fn ($query, $tag) =>
+                $query->whereHas('tags',fn ($query) =>
+                $query->where('slug',$tag)));
+    }
+
     public function relatedPosts($take = 3)
     {
         return $this->whereHas('categories', function ($query) {
