@@ -37,6 +37,8 @@ class Post extends Model
         'cover_photo_path',
         'photo_alt_text',
         'user_id',
+        'created_at',
+        'updated_at',
     ];
 
     protected $dates = [
@@ -176,16 +178,13 @@ class Post extends Model
                                 ->preload()
                                 ->createOptionForm(Category::getForm())
                                 ->searchable()
+                                ->required()
                                 ->relationship('categories', 'name')
                                 ->columnSpanFull(),
 
                             TextInput::make('title')
                                 ->label('Titre')
                                 ->live(true)
-                                ->afterStateUpdated(fn (Set $set, ?string $state) => $set(
-                                    'slug',
-                                    Str::slug($state)
-                                ))
                                 ->required()
                                 ->unique(config('filamentblog.tables.prefix').'posts', 'title', null, 'id')
                                 ->maxLength(255),
@@ -201,6 +200,7 @@ class Post extends Model
                             Select::make('tag_id')
                                 ->multiple()
                                 ->preload()
+                                ->required()
                                 ->createOptionForm(Tag::getForm())
                                 ->searchable()
                                 ->relationship('tags', 'name')
