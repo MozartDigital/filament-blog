@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Str;
 use Mozartdigital\FilamentBlog\Database\Factories\PostFactory;
 use Mozartdigital\FilamentBlog\Enums\PostStatus;
+use FilamentTiptapEditor\TiptapEditor;
 
 class Post extends Model
 {
@@ -206,7 +207,7 @@ class Post extends Model
                                 ->relationship('tags', 'name')
                                 ->columnSpanFull(),
                         ]),
-                    RichEditor::make('body')
+                    TiptapEditor::make('body')
                         ->label('Contenu')
                         ->extraInputAttributes(['style' => 'max-height: 30rem; min-height: 24rem'])
                         ->required()
@@ -215,7 +216,7 @@ class Post extends Model
                         ->schema([
                             FileUpload::make('cover_photo_path')
                                 ->label('Image')
-                                ->directory('/blog-feature-images')
+                                ->directory('/images/articles_media/')
                                 ->hint('La taille de l\'image recommandé est de 1920x1004')
                                 ->image()
                                 ->preserveFilenames()
